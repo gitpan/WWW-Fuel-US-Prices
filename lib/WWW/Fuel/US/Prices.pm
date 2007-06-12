@@ -4,7 +4,7 @@ use warnings;
 use strict;
 use Carp;
 
-use version; our $VERSION = qv('0.0.3');
+use version; our $VERSION = qv('0.0.4');
 
 
 # Other recommended modules (uncomment to use):
@@ -278,6 +278,24 @@ The only valid values for the parameter are "unleaded", "plus", "premium" and "d
 =head2 get_most_expensive_station
 
 Works the same way as get_cheapest_station, but returns the station with the most expensive fuel for the given type.
+
+=head2 get_stations
+
+Returns an array of Gas stations around that zip code for which gas price info is present
+
+my @gas_stations = @{$gasPrices->get_stations};
+foreach(@gas_stations)
+{
+    # ...
+}
+	
+=head2 is_greater
+
+Subroutine used internally (need a better way to do this)
+
+=head2 is_less
+
+Same as is_greater
 
 =head1 CONFIGURATION AND ENVIRONMENT
 
